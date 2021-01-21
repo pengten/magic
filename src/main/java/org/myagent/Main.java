@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 启动类
+ *
+ * @author yangwenpeng
+ * @version 2021年1月21日13:58:43
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -41,10 +47,5 @@ public class Main {
         } catch (AttachNotSupportedException | IOException | AgentLoadException | AgentInitializationException e) {
             e.printStackTrace(System.err);
         }
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
     }
 }
