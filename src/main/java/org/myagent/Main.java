@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  * 启动类
- *
+ * Main class
  * @author yangwenpeng
  * @version 2021年1月21日13:58:43
  */
