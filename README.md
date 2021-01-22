@@ -1,7 +1,7 @@
 # myagent
-用于平滑替换运行中 Java 进程的类定义
+用于平滑替换运行中 Java 进程的类定义。
 
-Class definition for smooth replacement of running Java processes
+Class definition for smooth replacement of running Java processes.
 
 使用该 agent 可以在不重启进程的情况下修改代码，并且立即生效。
 
@@ -14,22 +14,26 @@ run `java -jar myagent-1.0-SNAPSHOT.jar`
 
 
 按照提示依次输入“进程ID”、“全限定类名”、“替换用的class文件地址”、“日志文件全路径”。示例如下：
+
+```
 entry a PID from upper:1234
 className:java.lang.String
 classPath:/classdir/String.class
 logfile:/logdir/example.log
+```
 
 也可以通过启动参数的形势传递，如：
 
 `java -jar myagent-1.0-SNAPSHOT.jar 1234 java.lang.String /classdir/String.class /logdir/example.log`
 
 如果正常执行结束将会看到如下信息：
-`
+```
 attaching...
 loadAgent...
 agent loaded!
 detaching...
 detached!
-`
+```
+
 
 详细的执行日志可以通过日志文件查看，执行过程中的异常信息也会记录在日志文件中。
