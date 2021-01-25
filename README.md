@@ -11,7 +11,7 @@ Java应用进程必须设置`Can-Retransform-Classes = true`,如果使用 maven 
 
 The Java application process must set 'can retransform classes = true'. If Maven is used for packaging, the Java application process must set 'can retransform classes = true' pom.xml The following configuration can be added to.
 
-```
+```xml
 <build>
     <plugins>
         <plugin>
