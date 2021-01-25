@@ -7,9 +7,9 @@ Class definition for smooth replacement of running Java processes.
 
 The agent can modify the code without restarting the process and take effect immediately.
 ## 前提条件
-Java应用进程必须设置`Can-Retransform-Classes = true`,如果使用 maven 打包，则在 pom.xml 中加入以下配置即可。
+Java应用进程必须设置`Can-Retransform-Classes = true`,如果使用 maven 打包，可以在 pom.xml 中进行如下配置：
 
-The Java application process must set 'can retransform classes = true'. If Maven is used for packaging, the Java application process must set 'can retransform classes = true' pom.xml The following configuration can be added to.
+Java application process must set 'can retransform classes = true'. If Maven is used for packaging, you can use the pom.xml The configuration is as follows:
 
 ```xml
 <build>
