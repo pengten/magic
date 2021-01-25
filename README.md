@@ -6,7 +6,40 @@ Class definition for smooth replacement of running Java processes.
 使用该 agent 可以在不重启进程的情况下修改代码，并且立即生效。
 
 The agent can modify the code without restarting the process and take effect immediately.
+## 前提条件
+Java应用进程必须设置`Can-Retransform-Classes = true`,如果使用 maven 打包，则在 pom.xml 中加入以下配置即可。
 
+The Java application process must set 'can retransform classes = true'. If Maven is used for packaging, the Java application process must set 'can retransform classes = true' pom.xml The following configuration can be added to.
+
+```
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+            <configuration>
+                <transformers>
+                    <transformer
+                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                        <manifestEntries>
+                            <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                            <Can-Retransform-Classes>true</Can-Retransform-Classes>
+                        </manifestEntries>
+                    </transformer>
+                </transformers>
+            </configuration>
+        </execution>
+    </executions>
+        </plugin>
+    </plugins>
+</build>
+```
 ## 如何使用
 maven打包后，执行 `java -jar myagent-1.0-SNAPSHOT.jar`
 
