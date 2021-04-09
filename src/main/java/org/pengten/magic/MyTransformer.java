@@ -1,7 +1,7 @@
-package org.myagent;
+package org.pengten.magic;
 
 import org.apache.commons.io.IOUtils;
-import org.myagent.log.Log;
+import org.pengten.magic.log.Log;
 
 import java.io.File;
 import java.io.FileInputStream;

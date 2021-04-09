@@ -27,9 +27,9 @@
               <transformers>
                 <transformer>
                   <manifestEntries>
-                    <Main-Class>org.myagent.Main</Main-Class>
-                    <Premain-Class>org.myagent.Agent</Premain-Class>
-                    <Agent-Class>org.myagent.Agent</Agent-Class>
+                    <Main-Class>org.pengten.magic.Main</Main-Class>
+                    <Premain-Class>org.pengten.magic.Agent</Premain-Class>
+                    <Agent-Class>org.pengten.magic.Agent</Agent-Class>
                     <Can-Redefine-Classes>true</Can-Redefine-Classes>
                     <Can-Retransform-Classes>true</Can-Retransform-Classes>
                   </manifestEntries>

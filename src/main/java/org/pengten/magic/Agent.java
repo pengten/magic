@@ -1,6 +1,6 @@
-package org.myagent;
+package org.pengten.magic;
 
-import org.myagent.log.Log;
+import org.pengten.magic.log.Log;
 
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;

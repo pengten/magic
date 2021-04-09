@@ -1,4 +1,4 @@
-package org.myagent;
+package org.pengten.magic;
 
 import com.sun.tools.attach.*;
 

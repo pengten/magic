@@ -1,4 +1,4 @@
-package org.myagent.log;
+package org.pengten.magic.log;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
