@@ -41,9 +41,9 @@ Java application process must set 'can retransform classes = true'. If Maven is 
 </build>
 ```
 ## 如何使用
-maven打包后，执行 `java -jar myagent-1.0-SNAPSHOT.jar`
+maven打包后，执行 `java -jar magic-1.0.0.jar`
 
-run `java -jar myagent-1.0-SNAPSHOT.jar`
+run `java -jar magic-1.0.0.jar`
 
 
 按照提示依次输入“进程ID”、“全限定类名”、“替换用的class文件地址”、“日志文件全路径”。示例如下：
@@ -57,7 +57,7 @@ logfile:/logdir/example.log
 
 也可以通过启动参数的形势传递，如：
 
-`java -jar myagent-1.0-SNAPSHOT.jar 1234 java.lang.String /classdir/String.class /logdir/example.log`
+`java -jar magic-1.0.0.jar 1234 java.lang.String /classdir/String.class /logdir/example.log`
 
 如果正常执行结束将会看到如下信息：
 ```
