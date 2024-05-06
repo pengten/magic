@@ -9,6 +9,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+<!--          java字节码依赖 -->
     <dependencies>
         <dependency>
             <groupId>org.javassist</groupId>
@@ -16,6 +17,7 @@
             <version>3.25.0-GA</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.earcam.wrapped/com.sun.tools.attach -->
+<!--              attach工具包 -->
         <dependency>
             <groupId>io.earcam.wrapped</groupId>
             <artifactId>com.sun.tools.attach</artifactId>
@@ -57,6 +59,7 @@
                     <transformers>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+<!--                                  这里需要配置一下Main和Agent等 -->
                             <manifestEntries>
                                 <Main-Class>org.pengten.magic.Main</Main-Class>
                                 <Premain-Class>org.pengten.magic.Agent</Premain-Class>
