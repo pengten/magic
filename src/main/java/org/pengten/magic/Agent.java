@@ -6,16 +6,16 @@ import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
 
 /**
- * agentmainÈë¿ÚÀà
+ * agentmainå…¥å£ç±»
  * the agent class
  *
  * @author yangwenpeng
- * @version 2021Äê1ÔÂ20ÈÕ16:49:50
+ * @version 2021å¹´1æœˆ20æ—¥16:49:50
  */
 public class Agent {
 
     /**
-     * agentmain·½·¨£¬agentÈë¿Ú·½·¨
+     * agentmainæ–¹æ³•ï¼Œagentå…¥å£æ–¹æ³•
      * Agent entry method
      *
      * @param agentArgs
@@ -23,8 +23,10 @@ public class Agent {
      */
     public static void agentmain(String agentArgs, Instrumentation inst) {
         try {
+            // save the logs
             Log.init(agentArgs.split(";")[2]);
             Log.getInstants().writeLine("start agent args:" + agentArgs);
+            // replace class
             transfer(agentArgs, inst);
             Log.getInstants().writeLine("finish agent!");
             Log.release();
@@ -36,7 +38,7 @@ public class Agent {
 
 
     /**
-     * Ö´ĞĞ×Ö½ÚÂë×ª»»
+     * æ‰§è¡Œå­—èŠ‚ç è½¬æ¢
      * Perform bytecode conversion
      * @param agentArgs agent args
      * @param inst {@link Instrumentation}
