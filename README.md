@@ -3,7 +3,7 @@
 
 Class definition for smooth replacement of running Java processes.
 
-使用该 agent 可以在不重启进程的情况下修改代码，并且立即生效。
+使用该 agent 可以在不重启进程的情况下修改代码，并且立即生效。支持从本地路径或远程url加载新的class文件替换堆内存中的class。
 
 The agent can modify the code without restarting the process and take effect immediately.
 ## 前提条件
