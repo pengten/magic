@@ -12,21 +12,21 @@ import java.net.URL;
 import java.security.ProtectionDomain;
 
 /**
- * ¼ÓÔØÊ±×ª»»Àà£¬Ö÷ÒªÓÃÓÚÌæ»»ÀàµÄ×Ö½ÚÂë¡£
+ * åŠ è½½æ—¶è½¬æ¢ç±»ï¼Œä¸»è¦ç”¨äºæ›¿æ¢ç±»çš„å­—èŠ‚ç ã€‚
  * Load time conversion class, mainly used to replace the bytecode of the class.
  * @author yangwenpeng
- * @version 2021Äê1ÔÂ22ÈÕ14:01:53
+ * @version 2021å¹´1æœˆ22æ—¥14:01:53
  */
 public class MyTransformer implements ClassFileTransformer {
 
     /**
-     * ÓÃÓÚÌæ»»×Ö½ÚÂëµÄ class ÎÄ¼şµØÖ·£¬Ö§³Ö http ºÍ±¾µØ¾ø¶ÔÂ·¾¶
+     * ç”¨äºæ›¿æ¢å­—èŠ‚ç çš„ class æ–‡ä»¶åœ°å€ï¼Œæ”¯æŒ http å’Œæœ¬åœ°ç»å¯¹è·¯å¾„
      * Class file address used to replace bytecode, supporting HTTP and local absolute path
      */
     private String url;
 
     /**
-     * ĞèÒªÌæ»»µÄÄ¿±ê class È«ÏŞ¶¨Ãû£¬Èç java.lang.String
+     * éœ€è¦æ›¿æ¢çš„ç›®æ ‡ class å…¨é™å®šåï¼Œå¦‚ java.lang.String
      * The fully qualified name of the target class to be replaced, such as java.lang.String
      */
     private String targetClass;
@@ -39,6 +39,7 @@ public class MyTransformer implements ClassFileTransformer {
 
     @Override
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
+        // è¿™é‡ŒclassNameæ˜¯ / åˆ†éš”çš„ï¼Œ è€Œè¾“å…¥çš„classè·¯å¾„æ˜¯.åˆ†éš”ï¼Œæ‰€ä»¥éœ€è¦è¿›è¡Œä¸€ä¸‹è½¬æ¢å†å¯¹æ¯”
         if (!className.equals(targetClass.replace(".", "/"))) {
             return null;
         }
@@ -46,6 +47,7 @@ public class MyTransformer implements ClassFileTransformer {
         FileInputStream fileInputStream = null;
         try {
             if (url.startsWith("http")) {
+                // æ”¯æŒè¿œç¨‹åŠ è½½
                 bytes = IOUtils.toByteArray(new URL(url));
             } else {
                 fileInputStream = new FileInputStream(new File(url));
